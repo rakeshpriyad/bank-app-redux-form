@@ -32,7 +32,7 @@ const MenuBillPayment = () => {
           <NavLink to="/Recharge" style={{textDecoration: 'none'}}>Recharge</NavLink>
         </MenuItem>
         <MenuItem onClick={popupStateHome.close}>
-            <NavLink to="/AccountStatement" style={{textDecoration: 'none'}}>Electricity Bill</NavLink>
+            <NavLink to="/ElectricityBill" style={{textDecoration: 'none'}}>Electricity Bill</NavLink>
         </MenuItem>
       </Menu>
     </React.Fragment>

@@ -37,6 +37,9 @@ const MenuProfile = () => {
         <MenuItem onClick={popupStateHome.close}>
             <NavLink to="/Users" style={{textDecoration: 'none'}}>Account Statement Table</NavLink>
         </MenuItem>
+        <MenuItem onClick={popupStateHome.close}>
+            <NavLink to="/UserApp" style={{textDecoration: 'none'}}>UserApp</NavLink>
+        </MenuItem>
       </Menu>
     </React.Fragment>
     

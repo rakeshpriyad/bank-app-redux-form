@@ -3,7 +3,10 @@ import { Field, reduxForm, SubmissionError} from 'redux-form';
 import {FormLabel} from '../FormLabel';
 import {renderField} from '../FormInputField';
 import {renderSelectField} from '../FormSelectField';
-// import asyncValidate from '../../actions/acyncValidation';
+import {bindActionCreators} from 'redux';
+import { connect } from 'react-redux';
+import * as actionCreators from '../../../actions/submitAction';
+
 
 
 import 'object-assign';
@@ -90,10 +93,10 @@ const save = ({userName='', emailAddress='', mobileNo='', address='' }, submitUs
 
 
 const stateOptions = [{id: "BH", value: "Bihar" }, {id: "UP", value: "UP" }]
-const PaymentFormFunc = ({asyncValidating, handleSubmit, submitAction,  pristine, submitting, reset}) => (
+const ElectricityBillFunc = ({asyncValidating, handleSubmit, submitAction,  pristine, submitting, reset}) => (
     
 <form onSubmit={handleSubmit((fields) => save(fields, submitAction, reset))} id='form1' className='mLabForm'>
-    <div className='form-row'>Bill Payments</div>    
+    <div className='form-row'>Electricity Bill</div>    
     <div className='form-row'>
         <FormLabel labelName={'accountHolderName'} fieldName={'Account holder Name'} isRequire={true} />
         <Field component={renderField} type='text' placeholder='Name ' name='accountHolderName' id='accountHolderName' />
@@ -152,8 +155,19 @@ const PaymentFormFunc = ({asyncValidating, handleSubmit, submitAction,  pristine
     </form>
 )
 
-const PaymentForm = reduxForm({
-    form: 'payment',
-})(PaymentFormFunc);
+const ElectricityBillForm = reduxForm({
+    form: 'contact',
+})(ElectricityBillFunc);
 
-export default PaymentForm;
+function mapStateToProps(state) {
+    return {
+
+    };
+}
+
+function mapDispatchToProps(dispatch) {
+    console.log(actionCreators)
+    return bindActionCreators(actionCreators, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ElectricityBillForm);

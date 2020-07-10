@@ -13,6 +13,9 @@ import AccountSummary from './component/reports/accounts/AccountSummary';
 import AccountStatement from './component/reports/accounts/AccountStatement';
 import Payments from './component/forms/Payments/index';
 import Recharge from './component/forms/BillPayments/index';
+import ElectricityBill from './component/forms/BillPayments/ElectricityBill';
+
+import UserApp from './component/reports/users/UserApp'; 
 
 const store = configureStore();
 
@@ -25,10 +28,12 @@ const App = (
         
         <Switch>
         <Route exact path='/' component={Home} />
-        
+        <Route exact path='/UserApp' component={UserApp} />
+
         <Route exact path='/AccountSummary' component={AccountSummary} />
         <Route exact path='/AccountStatement' component={AccountStatement} />
         <Route exact path='/Recharge' component={Recharge} />
+        <Route exact path='/ElectricityBill' component={ElectricityBill} />
         <Route exact path='/Payments' component={Payments} />
         <Route exact path='/User' component={User} />
         <Route exact path='/Users' component={UserTable} />

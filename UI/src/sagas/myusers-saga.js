@@ -1,10 +1,10 @@
-import { put, takeEvery, takeLatest } from 'redux-saga/effects'
-import {loadUsersSuccess, LOAD_USERS_ERROR, LOAD_USERS_LOADING, LOAD_USERS_SUCCESS} from "../actions/actions";
+import { put, takeEvery } from 'redux-saga/effects'
+import {LOAD_USERS_ERROR, LOAD_USERS_LOADING, LOAD_USERS_SUCCESS} from "../actions/actions";
 import Api from '../api/api'
 
 
 const fetchAsync = async (func) => {
-    console.log(" calling fetch..")
+  console.log(" calling fetch..")
    const response = await func();
    console.log(" fetch.. response.. " + response)
    if (response.ok) {

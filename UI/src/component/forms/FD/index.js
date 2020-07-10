@@ -1,7 +1,7 @@
 import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
 import * as actionCreators from '../../../actions/submitAction';
-import Payments from './Payments';
+import Payments from './FD';
 
 function mapStateToProps(state) {
     return {
