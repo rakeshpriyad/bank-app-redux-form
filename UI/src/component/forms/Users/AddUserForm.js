@@ -1,32 +1,26 @@
-import React, { useState } from 'react'
+import {bindActionCreators} from 'redux';
+import { connect } from 'react-redux';
+import * as actionCreators from '../../../actions/submitUserAction';
 
-const AddUserForm = props => {
-	const initialFormState = { id: null, name: '', username: '' }
-	const [ user, setUser ] = useState(initialFormState)
+import {ConnectedCreateUserForm} from './UserForm';
 
-	const handleInputChange = event => {
-		const { name, value } = event.target
+function mapStateToProps(state, ownProps) {
+    console.log(state);
+    return {
+       /*  initialValues: {
+            id: ownProps.users.id,
+            userName: ownProps.users.userName,
+            emailAddress: ownProps.users.mailAddress,
+            mobileNo: ownProps.users.tel
+          } */
+    };
 
-		setUser({ ...user, [name]: value })
-	}
-
-	return (
-		<form
-			onSubmit={event => {
-				event.preventDefault()
-				if (!user.name || !user.username) return
-
-				props.addUser(user)
-				setUser(initialFormState)
-			}}
-		>
-			<label>Name</label>
-			<input type="text" name="name" value={user.name} onChange={handleInputChange} />
-			<label>Username</label>
-			<input type="text" name="username" value={user.username} onChange={handleInputChange} />
-			<button>Add new user</button>
-		</form>
-	)
+    
 }
 
-export default AddUserForm
+function mapDispatchToProps(dispatch) {
+    console.log("-----USER--"+actionCreators)
+    return bindActionCreators(actionCreators, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ConnectedCreateUserForm);

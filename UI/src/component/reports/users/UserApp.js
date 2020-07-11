@@ -1,6 +1,6 @@
 import React, { useState, Fragment } from 'react'
-import AddUserForm from '../../forms/Users/AddUserForm'
-import EditUserForm from '../../forms/Users/EditUserForm'
+import ConnectedEditUserForm from '../../forms/Users/AddUserForm'
+//import EditUserForm from '../../forms/Users/EditUserForm'
 import UserTable from './UserTable'
 
 const UserApp = () => {
@@ -50,17 +50,14 @@ const UserApp = () => {
 					{editing ? (
 						<Fragment>
 							<h2>Edit user</h2>
-							<EditUserForm
-								editing={editing}
-								setEditing={setEditing}
-								currentUser={currentUser}
-								updateUser={updateUser}
+							<ConnectedEditUserForm
+								mode ="edit"
 							/>
 						</Fragment>
 					) : (
 						<Fragment>
 							<h2>Add user</h2>
-							<AddUserForm addUser={addUser} />
+							<ConnectedEditUserForm addUser={addUser} />
 						</Fragment>
 					)}
 				</div>
