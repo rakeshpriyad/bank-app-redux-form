@@ -32,7 +32,7 @@ const MenuReqEnq = () => {
           <NavLink to="/" style={{textDecoration: 'none'}}>Account Summary</NavLink>
         </MenuItem>
         <MenuItem onClick={popupStateHome.close}>
-            <NavLink to="/User" style={{textDecoration: 'none'}}>Account Statement</NavLink>
+            <NavLink to="/CustomerApp" style={{textDecoration: 'none'}}>CustomerApp</NavLink>
         </MenuItem>
       </Menu>
     </React.Fragment>

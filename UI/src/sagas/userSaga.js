@@ -38,3 +38,4 @@ export function* userSaga(){
     ]
 }
 
+export default userSaga;

@@ -5,6 +5,7 @@ import thunk from 'redux-thunk';
 import createSagaMiddleware from 'redux-saga';
 import rootReducer from './appReducers';
 import myUsersSaga from "../sagas/myusers-saga";
+import usersSaga from "../sagas/userSaga";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -15,6 +16,7 @@ export const configureStore = initialState => {
   const store = createStore(rootReducer, initialState, composeEnhancers(applyMiddleware(...middleware)));
 
   sagaMiddleware.run(myUsersSaga);
+  sagaMiddleware.run(usersSaga);
 
   return store;
 }

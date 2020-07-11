@@ -16,6 +16,7 @@ import Recharge from './component/forms/BillPayments/index';
 import ElectricityBill from './component/forms/BillPayments/ElectricityBill';
 
 import UserApp from './component/reports/users/UserApp'; 
+import CustomerApp from './component/reports/customers/CustomerApp'; 
 
 const store = configureStore();
 
@@ -29,6 +30,7 @@ const App = (
         <Switch>
         <Route exact path='/' component={Home} />
         <Route exact path='/UserApp' component={UserApp} />
+        <Route exact path='/CustomerApp' component={CustomerApp} />
 
         <Route exact path='/AccountSummary' component={AccountSummary} />
         <Route exact path='/AccountStatement' component={AccountStatement} />
